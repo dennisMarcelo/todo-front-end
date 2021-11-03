@@ -17,9 +17,9 @@ export async function getToken(email, password) {
   return res.json();
 }
 
-export async function createNewUser(name, email, password) {
+export async function createNewUser(newUser) {
   const url = process.env.REACT_APP_URL_SIGNUP;
-  const requestData = createRequestData('POST', { name, email, password });
+  const requestData = createRequestData('POST', newUser);
 
   const res = await fetch(url, requestData);
   return res.json();
